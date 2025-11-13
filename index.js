@@ -19,6 +19,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
+// MongoDB Connection
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@project-server.qxfj2tl.mongodb.net/?appName=project-server`;
 
 const client = new MongoClient(uri, {
