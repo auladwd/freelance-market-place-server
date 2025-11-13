@@ -103,7 +103,7 @@ async function run() {
     app.get('/latest-jobs', async (req, res) => {
       const result = await jobCollection
         .find()
-        .sort({ created_at: -1 }) // Sort by descending creation date
+        .sort({ created_at: -1 }) 
         .limit(6)
         .toArray();
       res.send(result);
@@ -124,6 +124,7 @@ async function run() {
       res.send(result);
     });
 
+    // Accept a Job
     app.put('/jobs/accept/:id', verifyToken, async (req, res) => {
       const { id } = req.params;
       const objectId = new ObjectId(id);
@@ -150,6 +151,8 @@ run().catch(console.dir);
 app.get('/', (req, res) => {
   res.send('Server is running fine!');
 });
+
+// Start the Server
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
