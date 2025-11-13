@@ -13,6 +13,8 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Firebase Admin Initialization
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
