@@ -30,6 +30,7 @@ const client = new MongoClient(uri, {
   },
 });
 
+// Middleware to Verify Firebase Token
 const verifyToken = async (req, res, next) => {
   const authorization = req.headers.authorization;
 
