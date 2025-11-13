@@ -52,11 +52,14 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
+// Main Function to Run the Server and Define Routes
 async function run() {
   try {
     // await client.connect();
     const db = client.db('marketplace_db');
     const jobCollection = db.collection('job_listings');
+
+    // CRUD Routes for Job Listings
 
     app.get('/jobs', async (req, res) => {
       const result = await jobCollection.find().toArray();
