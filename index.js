@@ -66,6 +66,7 @@ async function run() {
       res.send(result);
     });
 
+    // Get a single job by ID
     app.get('/jobs/:id', verifyToken, async (req, res) => {
       const { id } = req.params;
       const objectId = new ObjectId(id);
