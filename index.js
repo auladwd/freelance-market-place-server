@@ -103,8 +103,8 @@ async function run() {
     app.get('/latest-jobs', async (req, res) => {
       const result = await jobCollection
         .find()
-        .sort({ created_at: -1 }) 
-        .limit(6)
+        .sort({ created_at: -1 })
+        .limit(8)
         .toArray();
       res.send(result);
     });
